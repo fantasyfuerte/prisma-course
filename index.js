@@ -90,7 +90,11 @@ async function main() {
     data: {
       title: "A new post",
       content: "This is the content of the new post, just created",
-      authorID: 1,
+      author: {
+        connect: {
+          email: "marcos@gmail.com",
+        },
+      },
     },
   });
 
