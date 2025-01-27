@@ -12,8 +12,15 @@ async function main() {
   //   });
   //   console.log(newUser);
 
-  const users = await prisma.user.findMany();
-  console.log(users);
+  //   const users = await prisma.user.findMany();
+  //   console.log(users);
+
+  const user = await prisma.user.findFirst({
+    where: {
+      email: "maria@gmail.com",
+    },
+  });
+  console.log(user);
 }
 
 main();
