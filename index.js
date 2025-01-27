@@ -5,9 +5,9 @@ const prisma = new PrismaClient();
 async function main() {
   // const newUser = await prisma.user.create({
   //   data: {
-  //     email: "leo@gmail.com",
-  //     name: "Leonardo",
-  //     lastname: "Rossi",
+  //     email: "joseph@gmail.com",
+  //     name: "Joseph",
+  //     lastname: "Martinez",
   //   },
   // });
 
@@ -32,13 +32,28 @@ async function main() {
 
   // console.log(user.email + " - " + user.name + " - " + user.lastname);
 
-  const user = await prisma.user.delete({
+  // try {
+  //   const user = await prisma.user.delete({
+  //     where: {
+  //       email: "leo@gmail.com",
+  //     },
+  //   });
+  // } catch (e) {
+  //   console.log(e);
+  // }
+
+  // console.log(user); //devuelve el eliminado
+
+  const modifiedUser = await prisma.user.update({
     where: {
-      email: "leo@gmail.com",
+      email: "joe@gmail.com",
+    },
+    data: {
+      name: "Jhonatan",
     },
   });
 
-  console.log(user); //devuelve el eliminado
+  console.log(modifiedUser);
 }
 
 main();
