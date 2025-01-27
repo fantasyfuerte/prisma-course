@@ -32,14 +32,17 @@ async function main() {
 
   // console.log(user.email + " - " + user.name + " - " + user.lastname);
 
-  // const user = await prisma.user.delete({
-  //   where: {
-  //     email: "leo@gmail.com",
-  //   },
-  // });
+  try {
+    const user = await prisma.user.delete({
+      where: {
+        email: "leo@gmail.com",
+      },
+    });
+  } catch (e) {
+    console.log(e);
+  }
 
   // console.log(user); //devuelve el eliminado
-
 }
 
 main();
