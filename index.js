@@ -17,7 +17,14 @@ async function main() {
 
   const user = await prisma.user.findFirst({
     where: {
-      name: "Leonardo",
+      OR: [
+        {
+          email: "leo@gmail.com",
+        },
+        {
+          name: "Leonardo",
+        },
+      ],
     },
   });
   console.log(user.email + " - " + user.name + " - " + user.lastname);
