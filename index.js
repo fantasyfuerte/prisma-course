@@ -62,15 +62,43 @@ async function main() {
 
   // console.log(modifiedUser); // devuelve un count del numero de registros modificados
 
-  const deletedUsers = await prisma.user.deleteMany({
-    where: {
-      name: "Marta",
+  // const deletedUsers = await prisma.user.deleteMany({
+  //   where: {
+  //     name: "Marta",
+  //   },
+  // });
+
+  // console.log(deletedUsers);
+
+  // const upsertMethod = await prisma.user.upsert({
+  //   where: {
+  //     email: "leo@gmail.com",
+  //   },
+  //   update: {
+  //     name: "Leito",
+  //   },
+  //   create: {
+  //     email: "leo@gmail.com",
+  //     name: "Leonardo",
+  //     lastname: "Perez",
+  //   },
+  // });
+
+  // console.log(upsertMethod);
+
+  const newPost = await prisma.post.create({
+    data: {
+      title: "A new post",
+      content: "This is the content of the new post, just created",
+      author: {
+        connect: {
+          email: "marcos@gmail.com",
+        },
+      },
     },
   });
 
-  console.log(deletedUsers);
-  
-
+  console.log(newPost);
 }
 
 main();
