@@ -17,10 +17,10 @@ async function main() {
 
   const user = await prisma.user.findFirst({
     where: {
-      email: "maria@gmail.com",
+      name: "Maria",
     },
   });
-  console.log(user);
+  console.log(user.email + " - " + user.name + " - " + user.lastname);
 }
 
 main();
