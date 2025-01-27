@@ -51,16 +51,26 @@ async function main() {
 
   // console.log(user); //devuelve el eliminado
 
-  const modifiedUser = await prisma.user.updateMany({
+  // const modifiedUser = await prisma.user.updateMany({
+  //   where: {
+  //     name: "Marta",
+  //   },
+  //   data: {
+  //     lastname: "Sanchez",
+  //   },
+  // });
+
+  // console.log(modifiedUser); // devuelve un count del numero de registros modificados
+
+  const deletedUsers = await prisma.user.deleteMany({
     where: {
       name: "Marta",
     },
-    data: {
-      lastname: "Sanchez",
-    },
   });
 
-  console.log(modifiedUser); // devuelve un count del numero de registros modificados
+  console.log(deletedUsers);
+  
+
 }
 
 main();
