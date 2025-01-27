@@ -70,21 +70,31 @@ async function main() {
 
   // console.log(deletedUsers);
 
-  const upsertMethod = await prisma.user.upsert({
-    where: {
-      email: "leo@gmail.com",
-    },
-    update: {
-      name: "Leito",
-    },
-    create: {
-      email: "leo@gmail.com",
-      name: "Leonardo",
-      lastname: "Perez",
+  // const upsertMethod = await prisma.user.upsert({
+  //   where: {
+  //     email: "leo@gmail.com",
+  //   },
+  //   update: {
+  //     name: "Leito",
+  //   },
+  //   create: {
+  //     email: "leo@gmail.com",
+  //     name: "Leonardo",
+  //     lastname: "Perez",
+  //   },
+  // });
+
+  // console.log(upsertMethod);
+
+  const newPost = await prisma.post.create({
+    data: {
+      title: "A new post",
+      content: "This is the content of the new post, just created",
+      authorID: 1,
     },
   });
 
-  console.log(upsertMethod);
+  console.log(newPost);
 }
 
 main();
