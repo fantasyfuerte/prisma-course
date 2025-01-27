@@ -59,16 +59,7 @@ async function main() {
       lastname: "Sanchez",
     },
   });
-  const modifiedUser = await prisma.user.updateMany({
-    where: {
-      name: "Marta",
-    },
-    data: {
-      lastname: "Sanchez",
-    },
-  });
 
-  console.log(modifiedUser);
   console.log(modifiedUser); // devuelve un count del numero de registros modificados
 }
 
