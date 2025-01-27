@@ -11,7 +11,6 @@ async function main() {
     },
   });
   console.log(newUser);
-  
 }
 
-main()
+main();
