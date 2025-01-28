@@ -105,7 +105,12 @@ async function main() {
       posts: true,
     },
   });
-  console.log(users);
+  users.forEach((user) => {
+    console.log(user.email);
+    user.posts.forEach((post) => {
+      console.log(post.title);
+    });
+  });
 }
 
 main();
