@@ -100,20 +100,20 @@ async function main() {
 
   // console.log(newPost);
 
-  const users = await prisma.user.findMany({
-    include: {
-      posts: true,
-    },
-  });
-  users.forEach((user) => {
-    console.log("_______________________");
-    console.log(user.email);
-    console.log("Posts:");
+  // const users = await prisma.user.findMany({
+  //   include: {
+  //     posts: true,
+  //   },
+  // });
+  // users.forEach((user) => {
+  //   console.log("_______________________");
+  //   console.log(user.email);
+  //   console.log("Posts:");
 
-    user.posts.forEach((post) => {
-      console.log(" - " + post.title);
-    });
-  });
+  //   user.posts.forEach((post) => {
+  //     console.log(" - " + post.title);
+  //   });
+  // });
 
   // const post = await prisma.post.create({
   //   data: {
