@@ -9,7 +9,7 @@ generator client {
 }
 
 datasource db {
-  provider = "sqlite"
+  provider = "postgresql"
   url      = env("DATABASE_URL")
 }
 
@@ -18,4 +18,5 @@ model Product {
   name  String
   price Decimal
   stock Boolean @default(false)
+  stars Int
 }
