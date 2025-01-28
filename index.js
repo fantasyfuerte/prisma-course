@@ -86,19 +86,26 @@ async function main() {
 
   // console.log(upsertMethod);
 
-  const newPost = await prisma.post.create({
-    data: {
-      title: "A new post",
-      content: "This is the content of the new post, just created",
-      author: {
-        connect: {
-          email: "marcos@gmail.com",
-        },
-      },
+  // const newPost = await prisma.post.create({
+  //   data: {
+  //     title: "A new post",
+  //     content: "This is the content of the new post, just created",
+  //     author: {
+  //       connect: {
+  //         email: "marcos@gmail.com",
+  //       },
+  //     },
+  //   },
+  // });
+
+  // console.log(newPost);
+
+  const users = await prisma.user.findMany({
+    include: {
+      posts: true,
     },
   });
-
-  console.log(newPost);
+  console.log(users);
 }
 
 main();
