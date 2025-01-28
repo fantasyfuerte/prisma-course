@@ -114,6 +114,18 @@ async function main() {
       console.log(" - " + post.title);
     });
   });
+
+  // const post = await prisma.post.create({
+  //   data: {
+  //     title: "Chocolate cake",
+  //     content: "Chocolate cake are so good",
+  //     author: {
+  //       connect: {
+  //         email: "marcos@gmail.com",
+  //       },
+  //     },
+  //   },
+  // });
 }
 
 main();
