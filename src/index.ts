@@ -8,6 +8,7 @@ async function main() {
       name: "Phone",
       price: 89.99,
       stock: true,
+      stars: 5,
     },
   });
   console.log(products);
